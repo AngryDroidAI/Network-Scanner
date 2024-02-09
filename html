@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scanner</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #0F0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .terminal {
+            background-color: #000;
+            border: 2px solid #0F0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .terminal-header {
+            color: #0F0;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .terminal-content {
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .terminal-content p {
+            margin: 5px 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .terminal-input {
+            display: flex;
+        }
+
+        .terminal-input input {
+            flex: 1;
+            padding: 5px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: #0F0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
+
+        .terminal-input button {
+            padding: 5px 10px;
+            background-color: #00F;
+            color: #0F0;
+            border: none;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .terminal-input button:hover {
+            background-color: #0F0;
+            color: #00F;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal">
+            <div class="terminal-header">Network Scanner</div>
+            <div class="terminal-content" id="terminal-content">
+                <p>Welcome to the Network Scanner. Initializing...</p>
+            </div>
+            <div class="terminal-input">
+                <input type="text" id="command-input" placeholder="Enter command...">
+                <button id="submit-button">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for Network Scanner
+        document.getElementById('submit-button').addEventListener('click', function() {
+            var commandInput = document.getElementById('command-input').value;
+            // Implement your network scanning logic here
+            // For demonstration purposes, let's just display the entered command
+            var terminalContent = document.getElementById('terminal-content');
+            var newCommand = document.createElement('p');
+            newCommand.textContent = '> ' + commandInput;
+            terminalContent.appendChild(newCommand);
+            document.getElementById('command-input').value = ''; // Clear input field
+        });
+    </script>
+</body>
+</html>
